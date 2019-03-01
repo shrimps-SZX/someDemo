@@ -1,0 +1,53 @@
+body{
+	margin-bottom: 0px;
+	padding: 0px;
+	background-color: rgba(0, 58, 255, 0.28);
+	height: 100%;
+}
+.main{
+	width: 480px;
+	margin: 0 auto;
+}
+.bt{
+
+}
+.demo{
+	position: absolute;
+	float: right;
+	right: 20px;
+	width: 208px;
+	height: 164px;
+	background-image: url(img/steal.png);
+	cursor: pointer;
+}
+#pic{
+
+	display: block;
+	margin: 0 auto;
+	height: 120px;
+}
+#sppp{
+	font-weight: bold;
+	margin-left: 6px;
+	font-size: 20px;
+}
+#sp{
+	margin-left: 6px;
+	font-size: 12px;
+}
+#spp{
+	position: relative;
+	float: right;
+
+	font-weight: bold;
+	right: 6px;
+	font-size: 40px;
+}
+#icon{
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	left: 10px;
+	top: 8px;
+	background-image: url(img/steal1.png);
+}
