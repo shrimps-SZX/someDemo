@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<script src="hmac-sha1.js"></script>
+	<link rel="stylesheet" type="text/css" href="weather.css">
+	<title>weather</title>
+</head>
+<body>
+	<div class="main">
+		<div class="wea">
+			<label>请输入城市</label>
+			<input type="text" name="city" id="city">
+			<button id = "bt" class = "bt">天气查询</button> <button id="search" class = "bt">未来三日天气</button> <br>
+		</div>
+		<div>
+			<span id="spa"></span>
+		</div>
+	</div>
+	<div class="demo">
+		<div>
+			<span id = "icon"></span>
+		</div>
+		<div class="demo-wea">
+			<img  id = "pic" draggable="false">
+		</div>
+		<div>
+			<span id = "spp"></span>
+			<span id = "sppp"></span><br>
+			<span id = "sp"></span>
+		</div>
+	</div>
+<script src="weather.js"></script>
+<script src="move.js"></script>
+<script>
+	$(document).ready(function(){
+	$("#bt").click(function(){
+		LOCATION = document.getElementById('city').value;
+		//构造最终请求
+		var url = API + "?location=" + LOCATION + "&" + str + "&callback=jsonpCallback";
+		console.log(LOCATION);
+		$.ajax({
+			type:"GET",
+			url:url,
+			dataType:"jsonp",
+			jsonp:'jsonpCallback',
+			
+			success:function(data){	
+			},
+			error:function(){
+			}	
+		});
+	});
+
+	$("#search").click(function(){
+		LOCATION = document.getElementById('city').value;
+		//构造最终请求
+		var url = APPI + "?location=" + LOCATION + "&" + str + "&callback=jsonCallback";
+		console.log(LOCATION);
+		$.ajax({
+			type:"GET",
+			url:url,
+			dataType:"jsonp",
+			jsonp:'jsonCallback',
+			
+			success:function(data){	
+			},
+			error:function(){
+			}	
+		});
+	});
+	})
+
+	$('#icon').mouseover(function(){
+		$('#icon').css("background-image","url(img/steal2.png)");
+	})
+	$('#icon').mouseout(function(){
+		$('#icon').css("background-image","url(img/steal1.png)");
+	})
+	$('#icon').click(function(){
+		$('.demo').fadeOut('slow');
+	})
+</script>
+</body>
+</html>
